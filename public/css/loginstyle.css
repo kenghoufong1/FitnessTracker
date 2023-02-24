@@ -1,0 +1,49 @@
+h1{
+    padding-top: 100px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.mainbody{
+    display: flex;
+    justify-content: space-around;
+}
+
+#login-box{
+    border-style: solid;
+    width: 50%;
+    padding: 30px;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.button{
+    margin: 10px;
+}
+
+input[type="text"],
+      input[type="password"] {
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+      
+      /* Style the buttons */
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
