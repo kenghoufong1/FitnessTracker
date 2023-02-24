@@ -1,0 +1,32 @@
+.chart-box{
+    border-style: solid;
+    width: 45%;
+    height: 700px;
+    display: flex;
+}
+.log-box{
+    border-style: solid;
+    width: 45%;
+    height: 700px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 20px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    
+    
+}
+
+.mainbody{
+    display: flex;
+    border-style: solid;
+    border-color: blue;
+    padding: 20px;
+    justify-content: space-evenly;
+}
+
