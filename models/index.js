@@ -16,7 +16,7 @@ Log.hasMany(Workout, {
     foreignKey: 'log_id'
 });
 
-Workout.belongsToMany(Log, {
+Workout.belongsTo(Log, {
     foreignKey: 'workout_id'
 })
 
