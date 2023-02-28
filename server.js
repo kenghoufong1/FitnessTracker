@@ -31,9 +31,10 @@ const sess = {
     db: sequelize
   })
 };
-
+app.use(express.static(path.join(__dirname, 'public'), { type: 'text/css' })); 
 app.use(session(sess));
 app.use(routes)
+
 
 
 sequelize.sync({ force: false }).then(() => {
