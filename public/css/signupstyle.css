@@ -1,6 +1,4 @@
 h1 {
-    padding-top: 100px;
-    padding-bottom: 50px;
     text-align: center;
 }
 
@@ -45,4 +43,9 @@ input[type="password"]  {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+}
+
+#signup-box{
+    border-style: solid;
+    width: 500px;
 }
