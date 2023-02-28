@@ -17,8 +17,9 @@ router.get('/:id', async (req, res) => {
             res.status(404).json({ message: 'No workouts found with this id!' })
             return;
         }
-    } catch {
-        
+        res.status(200).json(workoutData);
+    } catch (err) {
+        res.status(500).json(err);
     }
 })
 

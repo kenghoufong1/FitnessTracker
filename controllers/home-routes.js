@@ -5,12 +5,12 @@ const workout = require('../models/workout');
 
 router.get('/', async (req, res) => {
   try {
-    const userdata = await user.findAll({
-      include: [{ model: workout },{ model: log },{ model: user }]
-    });
-    const data = userdata.map((user) => user.get({ plain: true }));
-    console.log(user);
-    res.render('all', { user });
+    // const userdata = await user.findAll({
+    //   include: [{ model: workout },{ model: log },{ model: user }]
+    // });
+    // const data = userdata.map((user) => user.get({ plain: true }));
+    // console.log(data);
+    res.render('homepage');
   }
   catch (err) {
     res.status(500).json(err);
@@ -35,9 +35,9 @@ router.get('/signup', async (req, res) => {
   }
 });
 
-router.get('/dashboard', async (req, res) => {
+router.get('/profile', async (req, res) => {
   try {
-    res.render('dashboard');
+    res.render('profile');
   }
   catch (err) {
     res.status(500).json(err);
