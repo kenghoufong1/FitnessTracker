@@ -1,0 +1,9 @@
+[
+    {
+        "workout_duration": "1:00",
+        "hours_of_sleep": 8,
+        "weight": 150,
+        "mood": 4,
+        "user_id": 1
+    }
+]

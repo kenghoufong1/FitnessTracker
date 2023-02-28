@@ -19,7 +19,7 @@ Log.init(
             type: DataTypes.TIME,
         },
         hours_of_sleep: {
-            type: DataTypes.TIME,
+            type: DataTypes.INTEGER,
         },
         weight: {
             type: DataTypes.INTEGER,
@@ -29,6 +29,13 @@ Log.init(
         },
         description: {
             type: DataTypes.STRING,
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: "user",
+                key: "id"
+            }
         }
     },
     {
