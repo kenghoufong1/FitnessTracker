@@ -37,7 +37,16 @@ router.get('/signup', async (req, res) => {
 
 router.get('/profile', async (req, res) => {
   try {
-    res.render('profile');
+    res.render('profile',{loggedIn: req.session.loggedIn});
+  }
+  catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/log', async (req, res) => {
+  try {
+    res.render('log',{loggedIn: req.session.loggedIn});
   }
   catch (err) {
     res.status(500).json(err);
