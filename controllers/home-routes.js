@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     // });
     // const data = userdata.map((user) => user.get({ plain: true }));
     // console.log(data);
-    res.render('homepage');
+    res.render('homepage', { loggedIn: req.session.loggedIn });
   }
   catch (err) {
     res.status(500).json(err);
