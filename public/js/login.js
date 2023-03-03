@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
   
       if (response.ok) {
         // redirect the browser to the profile page (if successful)
-        document.location.replace('/');
+        document.location.replace('/profile');
       } else {
         alert(response.statusText);
       }
@@ -25,3 +25,10 @@ const loginFormHandler = async (event) => {
   document
     .querySelector('#login-form')
     .addEventListener('submit', loginFormHandler);
+
+  document
+    .querySelector('#signup-button')
+    .addEventListener('click', signupLink = (event) => {
+      event.preventDefault;
+      document.location.replace('/signup');
+    })
