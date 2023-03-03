@@ -15,9 +15,10 @@ router.get('/',withAuth, async (req, res) => {
 router.get('/graphdata',withAuth, async (req, res) => {
     try {
         const logData = await Log.findAll({
-            where: {
-                user_id: req.session.user_id,
-            },
+            // where: {
+            //     user_id: req.session.user_id,
+            // },
+            include: [{ model: Workout }],
         });
         // const datas = userdata.map((data) => data.get({ plain: true }));
         res.status(200).json(logData);
@@ -47,7 +48,6 @@ router.post('/', withAuth, async (req, res) => {
             ...req.body,
             user_id: req.session.user_id,
         });
-
         res.status(200).json(newLog);
     } catch (err) {
         res.status(400).json(err);
