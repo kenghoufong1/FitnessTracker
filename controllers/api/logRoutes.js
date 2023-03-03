@@ -5,9 +5,9 @@ const withAuth = require('../../utils/auth');
 router.get('/', async (req, res) => {
     try {
         const logData = await Log.findAll({
-            where: {
-                user_id: req.session.user_id,
-            },
+            // where: {
+            //     user_id: req.session.user_id,
+            // },
             include: [{ model: Workout }],
         });
         res.status(200).json(logData);
@@ -37,7 +37,6 @@ router.post('/', withAuth, async (req, res) => {
             ...req.body,
             user_id: req.session.user_id,
         });
-
         res.status(200).json(newLog);
     } catch (err) {
         res.status(400).json(err);
