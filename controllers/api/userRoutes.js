@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User, Log } = require('../../models');
 
-// create acccount
+// find all user 
 router.get('/', async (req, res) => {
     try {
         const userData = await User.findAll({
@@ -12,15 +12,16 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
+//create account
 router.post('/', async (req, res) => {
     try {
         const userData = await User.create(req.body);
     
         req.session.save(() => {
             req.session.user_id = userData.id;
-            req.session.logged_in = true;
-    
+            req.session.loggedIn = true;
+            req.session.name = userData.firstName 
+
             res.status(200).json(userData);
         });
     } catch (err) {
