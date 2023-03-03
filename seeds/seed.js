@@ -18,7 +18,7 @@ const seedDatabase = async () => {
         returning: true
     });
 
-    await Workout.bulkcreate(workoutData, {
+    await Workout.bulkCreate(workoutData, {
         individualHooks: true,
         returning: true
     });

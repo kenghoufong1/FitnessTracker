@@ -1,7 +1,9 @@
 <link rel="stylesheet" href="/css/userhomepagestyle.css">
 <body>
     <div class ="header">
-        <h1>Welcome Whoever its</h1>
+        {{#each datas as |data| }}
+        <h1>Welcome {{firstName}}</h1>
+        {{/each}}
         <button id="createlog" class="btn btn-primary" type="submit">Create Log</button>
     </div>
     <div class="mainbody">

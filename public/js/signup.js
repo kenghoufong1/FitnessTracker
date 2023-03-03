@@ -25,3 +25,10 @@ const registerFormHandler = async (event) => {
 document
     .querySelector('#signup-form')
     .addEventListener('submit', registerFormHandler);
+
+document
+    .querySelector('#goback-button')
+    .addEventListener('click', goBack = (event) => {
+      event.preventDefault;
+      document.location.replace('/');
+    })
