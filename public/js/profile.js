@@ -11,39 +11,78 @@ document
     .addEventListener('click', newlogHandler);
 
 const graphdata = async () => {
-    const graphdata = await fetch('/api/log/graphdata', {
+    const result = await fetch('/api/log/graphdata', {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
-    });
-    if (graphdata.ok) {
-        console.log(graphdata);
-    } else {
-        console.log("-----------explode");
+    })
+    const chartdata = await result.json();
+    console.log(chartdata);
+    const chartlabels = chartdata.map(item => item.date)
+    const timeworkout = chartdata.map(item => item.workout_duration)
+    const timeslept = chartdata.map(item => item.hours_of_sleep)
+
+    function reduceToHours(timeStrArr) {
+        // Map over the array and reduce each time string to its hour value
+        const hourArr = timeStrArr.map((timeStr) => {
+            // Split the time string into its components
+            const [hours, minutes, seconds] = timeStr.split(':');
+            // Parse the hour value as an integer and return it
+            return parseInt(hours, 10);
+        });
+        // Return the array of hour values
+        return hourArr;
     }
+    const hourArr = reduceToHours(timeworkout);
+
+
+    var ctx = document.getElementById('myChart').getContext('2d');
+
+    const myChart = new Chart(ctx, {
+        type: 'line',
+      
+        // Specify the data for the chart
+        data: {
+          labels: chartlabels,
+          datasets: [
+            {
+              label: 'Hours of Sleep',
+              data: hourArr,
+              yAxisID: 'y-axis-1', // Specify the ID of the first y-axis
+              borderColor: 'red', // Specify the line color
+              borderWidth: 2, // Specify the line width
+            },
+            {
+              label: 'Hours Worked out',
+              data: timeslept,
+              yAxisID: 'y-axis-1', // Specify the ID of the second y-axis
+              borderColor: 'blue', // Specify the line color
+              borderWidth: 2, // Specify the line width
+            },
+          ],
+        },
+        options: {
+            scales: {
+              yAxes: [
+                {
+                  id: 'y-axis-1', // Specify the ID of the first y-axis
+                  type: 'linear',
+                  position: 'left',
+                  scaleLabel: {
+                    display: true,
+                    labelString: 'Values',
+                  },
+                  ticks: {
+                    beginAtZero: true, // Start the axis at zero
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+    myChart;
+
 };
 graphdata();
 
-var ctx = document.getElementById('myChart').getContext('2d');
 
-// Configure the chart
-var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'My Progress',
-            data: [12, 19, 3, 5, 2, 3, 7],
-            borderColor: 'rgb(255, 99, 132)',
-            tension: 0.1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
-
-myChart;

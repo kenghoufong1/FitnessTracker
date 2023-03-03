@@ -3,6 +3,7 @@ const user = require('../models/user');
 const log = require('../models/log');
 const workout = require('../models/workout');
 
+
 router.get('/', async (req, res) => {
   try {
     res.render('homepage', { loggedIn: req.session.loggedIn });
@@ -40,16 +41,21 @@ router.get('/signup', async (req, res) => {
 });
 
 router.get('/profile', async (req, res) => {
-  try {
-    const userdata = await user.findAll({ where: { id: req.session.user_id } });
-    const datas = userdata.map((data) => data.get({ plain: true }));
-    res.render('profile',{
-      loggedIn: req.session.loggedIn,
-      datas
-    });
-  }
-  catch (err) {
-    res.status(500).json(err);
+  if (!req.session.loggedIn) {
+    console.log('not loggin')
+    res.redirect('/login');
+  } else {
+    try {
+      const userdata = await user.findAll({ where: { id: req.session.user_id } });
+      const datas = userdata.map((data) => data.get({ plain: true }));
+      res.render('profile',{
+        loggedIn: req.session.loggedIn,
+        datas
+      });
+    }
+    catch (err) {
+      res.status(500).json(err);
+    }
   }
 });
 

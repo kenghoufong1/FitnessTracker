@@ -84,3 +84,7 @@ p {
     background-color: rgb(179, 16, 151);
     color: white;
 }
+
+#myChart{
+    margin-top: 100px;
+}
