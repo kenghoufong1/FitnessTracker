@@ -11,7 +11,7 @@ const logCreator = async (event) => {
     const mood = document.querySelector('#slider').value.trim();
     const description = document.querySelector('#description').value.trim();
 
-    const log = { date, workout_type, workout_duration, hours_of_sleep, mood };
+    const log = { date, workout_type, workout_duration, hours_of_sleep, weight, mood, description };
 
     const response = await fetch('/api/log', {
         method: 'POST',
@@ -24,6 +24,10 @@ const logCreator = async (event) => {
     } else {
         console.log(response);
     }
+}
+
+const renderWorkouts = () => {
+
 }
 
 document
