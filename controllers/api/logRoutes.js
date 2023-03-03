@@ -15,9 +15,10 @@ router.get('/',withAuth, async (req, res) => {
 router.get('/graphdata',withAuth, async (req, res) => {
     try {
         const logData = await Log.findAll({
-            where: {
-                user_id: req.session.user_id,
-            },
+            // where: {
+            //     user_id: req.session.user_id,
+            // },
+            include: [{ model: Workout }],
         });
         res.status(200).json(logData);
     } catch (err) {
