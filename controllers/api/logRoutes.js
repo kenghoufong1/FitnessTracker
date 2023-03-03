@@ -2,7 +2,17 @@ const router = require('express').Router();
 const { Log, Workout } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/',withAuth, async (req, res) => {
+    try {
+        const logData = await Log.findAll({
+        });
+        res.status(200).json(logData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+//get the logged data back for the graph
+router.get('/graphdata',withAuth, async (req, res) => {
     try {
         const logData = await Log.findAll({
             // where: {
@@ -10,13 +20,14 @@ router.get('/', async (req, res) => {
             // },
             include: [{ model: Workout }],
         });
+        // const datas = userdata.map((data) => data.get({ plain: true }));
         res.status(200).json(logData);
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id',withAuth, async (req, res) => {
     try {
         const logData = await Log.findByPk(req.params.id, {
             include: [{ model: Product }],
