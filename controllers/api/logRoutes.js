@@ -19,7 +19,6 @@ router.get('/graphdata',withAuth, async (req, res) => {
                 user_id: req.session.user_id,
             },
         });
-        // const datas = userdata.map((data) => data.get({ plain: true }));
         res.status(200).json(logData);
     } catch (err) {
         res.status(500).json(err);
@@ -47,7 +46,6 @@ router.post('/', withAuth, async (req, res) => {
             ...req.body,
             user_id: req.session.user_id,
         });
-
         res.status(200).json(newLog);
     } catch (err) {
         res.status(400).json(err);

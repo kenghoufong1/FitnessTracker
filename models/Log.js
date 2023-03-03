@@ -11,8 +11,8 @@ Log.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        date_created: {
-            type: DataTypes.DATE,
+        date: {
+            type: DataTypes.DATEONLY,
             defaultValue: DataTypes.NOW,
         },
         workout_duration: {
