@@ -11,9 +11,19 @@
             <canvas id="myChart"></canvas> 
         </div>
 
-        <div class="log-box">
+        <div class="log-div">
             <div>
-
+                {{#each logdatas as |data|}}
+                <div class="log-display">
+                    <li>Date: {{date}}</li>
+                    <li>Hours of Sleep: {{hours_of_sleep}}</li>
+                    <li>Workouts Done: {{workout_type}}</li> 
+                    <li>Workout Duration: {{workout_duration}}</li>
+                    <li>Weight: {{weight}}</li>
+                    <li>Mood: {{mood}}</li>
+                    <li>Description: {{description}}</li>
+                </div>
+                {{/each}}
             </div>
             <div>
                 <button id="showall" class="btn btn-primary" type="submit">Show All</button>
