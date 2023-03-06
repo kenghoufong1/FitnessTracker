@@ -13,9 +13,11 @@ h1 {
     padding: 30px;
 }
 
-#signup-form {
+#log-form {
     display: flex;
     flex-direction: column;
+    border-style: solid;
+    background-color:white;
 }
 
 .button {
@@ -45,3 +47,21 @@ input[type="password"]  {
     font-size: 16px;
 }
 
+body {
+    background-color: #fdfdfd;
+    background-image: linear-gradient(-45deg, #00dbde, #966c97, #5cff9b);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+  }
+  
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
