@@ -48,9 +48,12 @@ router.get('/profile', async (req, res) => {
     try {
       const userdata = await user.findAll({ where: { id: req.session.user_id } });
       const datas = userdata.map((data) => data.get({ plain: true }));
+      const logdata = await log.findAll({ where: { user_id: req.session.user_id } });
+      const logdatas = logdata.map((data) => data.get({plain: true}));
       res.render('profile',{
         loggedIn: req.session.loggedIn,
-        datas
+        datas,
+        logdatas
       });
     }
     catch (err) {
