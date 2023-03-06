@@ -45,14 +45,14 @@ const graphdata = async () => {
           labels: chartlabels,
           datasets: [
             {
-              label: 'Hours of Sleep',
+              label: 'Hours Worked out',
               data: hourArr,
               yAxisID: 'y-axis-1', // Specify the ID of the first y-axis
               borderColor: 'red', // Specify the line color
               borderWidth: 2, // Specify the line width
             },
             {
-              label: 'Hours Worked out',
+              label: 'Hours of Sleep',
               data: timeslept,
               yAxisID: 'y-axis-1', // Specify the ID of the second y-axis
               borderColor: 'blue', // Specify the line color
