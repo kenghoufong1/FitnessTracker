@@ -8,12 +8,42 @@
         <form id="signup-form">
             <label for="date">Log Date:</label>
             <input type="date" id="datepicker">
-            <label for="workout-type">Workout type:</label>
-            <input type="text" id="workout-type" name="workout-type">
-            <label for="workout-duration">Workout duration:</label>
-            <input type="text" id="workout-duration" name="workout-duration">
-            <label for="sleep">Hours of sleep:</label>
-            <input type="text" id="sleep" name="sleep">
+            <label for="workout-type">Workouts Done:</label>
+            <div type="text" id="workout-types">
+                <input type="checkbox" name="upper-body" value="Upper Body"> Upper Body<br>
+                <input type="checkbox" name="lower-body" value="Lower Body"> Lower Body<br>
+                <input type="checkbox" name="full-body" value="Full Body"> Full Body<br>
+                <input type="checkbox" name="core" value="Core"> Core<br>
+                <input type="checkbox" name="cardio" value="Cardio"> Cardio<br>
+                <input type="checkbox" name="hiit" value="HIIT"> HIIT<br>
+                <input type="checkbox" name="yoga" value="Yoga"> Yoga<br>
+            </div>
+            <label for="workout-duration">Workout Duration:</label>
+            <select id="workout-duration" class="form-control">
+                <option value="0:30">0:30</option>
+                <option value="1:00">1:00</option>
+                <option value="1:30">1:30</option>
+                <option value="2:00">2:00</option>
+                <option value="2:30">2:30</option>
+                <option value="3:00">3:00</option>
+                <option value="3:30">3:30</option>
+                <option value="4:00">4:00</option>
+            </select>
+            <label for="sleep">Hours of Sleep:</label>
+            <select id="sleep" class="form-control">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
             <label for ="weight">Weight:</label>
             <input type="text" id="weight" name="weight">
             <label for="slider">How's your mood today?:</label> 
