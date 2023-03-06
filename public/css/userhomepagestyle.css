@@ -1,31 +1,37 @@
-.chart-box{
+.chart-box {
     border-style: solid;
     width: 45%;
     height: 700px;
     display: flex;
-}
-.log-box{
-    border-style: solid;
-    width: 45%;
-    height: 700px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding: 20px;
 }
 
-.header{
+.log-box {
+    border-style: solid;
+    width: 45%;
+    height: 700px;
+    display: flex;
+    padding: 20px;
+    justify-content: space-around;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #fff;
+    background-clip: content-box;
+}
+
+.header {
     display: flex;
     justify-content: space-between;
     margin: 30px;
-    
-    
+
+
 }
 
-.mainbody{
+.mainbody {
     display: flex;
     border-style: solid;
     border-color: blue;
-    padding: 20px;
     justify-content: space-evenly;
+    overflow: hidden;
+    background-color: #fff;
+    background-clip: content-box;
 }
