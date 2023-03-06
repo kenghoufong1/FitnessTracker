@@ -15,6 +15,9 @@ Log.init(
             type: DataTypes.DATEONLY,
             defaultValue: DataTypes.NOW,
         },
+        workout_type: {
+            type: DataTypes.STRING,
+        },
         workout_duration: {
             type: DataTypes.TIME,
         },

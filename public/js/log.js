@@ -1,10 +1,25 @@
 var slider = document.getElementById("slider");
 var emoji = document.getElementById("emoji");
+const workouts = document.getElementById("workout-types")
+const checkboxes = workouts.querySelectorAll('input[type="checkbox"]');
+const checkedWorkouts = [];
+
+checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener('change', (event) => {
+      if (event.target.checked) {
+        checkedWorkouts.push(event.target.value);
+      } else {
+        const index = checkedWorkouts.indexOf(event.target.value);
+        checkedWorkouts.splice(index, 1);
+      }
+    });
+});
 
 const logCreator = async (event) => {
+    console.log(checkedWorkouts);
     event.preventDefault();
     const date = document.querySelector('#datepicker').value.trim();
-    const workout_type = document.querySelector('#workout-type').value.trim();
+    const workout_type = checkedWorkouts.toString();
     const workout_duration = document.querySelector('#workout-duration').value.trim();
     const hours_of_sleep = document.querySelector('#sleep').value.trim();
     const weight = document.querySelector('#weight').value.trim();
@@ -13,6 +28,7 @@ const logCreator = async (event) => {
 
     const log = { date, workout_type, workout_duration, hours_of_sleep, weight, mood, description };
 
+    console.log(workout_type);    
     const response = await fetch('/api/log', {
         method: 'POST',
         body: JSON.stringify(log),
@@ -22,13 +38,12 @@ const logCreator = async (event) => {
     if (response.ok) {
         document.location.replace('/profile');
     } else {
-        console.log(response);
+        const errorResponse = await response.json();     
+        console.log(errorResponse)
     }
 }
 
-const renderWorkouts = () => {
 
-}
 
 document
     .querySelector('#save-log')

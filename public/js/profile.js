@@ -82,6 +82,20 @@ const graphdata = async () => {
 
     myChart;
 
+//     for (i = 0; i < chartdata.length; i++) {
+//       console.log(chartdata[i].date);
+//       const newDiv = document.createElement('div');
+
+//       // Set the class and text content of the div
+//       newDiv.className = 'my-class';
+//       newDiv.textContent = 'Hello, world!';
+
+//       // Find the parent element to append the new div to
+//       const parentElement = document.querySelector('#parent-div');
+
+//       // Append the new div to the parent element
+//       parentElement.appendChild(newDiv);
+//     }
 };
 graphdata();
 
