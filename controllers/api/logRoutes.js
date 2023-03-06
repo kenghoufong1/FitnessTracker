@@ -18,9 +18,7 @@ router.get('/graphdata',withAuth, async (req, res) => {
             where: {
                 user_id: req.session.user_id,
             },
-            include: [{ model: Workout }],
         });
-        // const datas = userdata.map((data) => data.get({ plain: true }));
         res.status(200).json(logData);
     } catch (err) {
         res.status(500).json(err);
