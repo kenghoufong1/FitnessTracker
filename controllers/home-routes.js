@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const user = require('../models/user');
-const log = require('../models/log');
-const workout = require('../models/workout');
+const user = require('../models/User');
+const log = require('../models/Log');
+const workout = require('../models/Workout');
 
 
 router.get('/', async (req, res) => {
