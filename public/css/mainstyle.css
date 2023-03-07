@@ -97,14 +97,3 @@ p {
     border-style: solid;
 }
 
-/* body {
-    background: linear-gradient(90deg, #4B0082, #000080, #0000FF);
-    background-size: 600% 600%;
-    animation: gradient 20s ease infinite;
-  }
-  
-  @keyframes gradient {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
-  } */
