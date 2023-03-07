@@ -15,10 +15,22 @@
 ### Description
 In project #2 we were given the opportunity to showcase what we've learned over the past six modules to create a real-world full-stack application. To demonstrate our skills and ability to work as a team, we created a Wellness Tracker. This application will track users' worksouts, duration of workouts, weight, mood. In addition, it will display a graph to track users' progress. 
 
-### Screenshot
+### Usage
 
-![]()
+On the homepage the user will have the option to log in if they already have an account or sign up to create a new account.
+![home](./images/Homepage.png)
 
+Upon clicking the 'sign-up' option, the user will be taken to a page were they will need to submit the necessary information to create a new account.
+![signup](./images/Sign-Up.png)
+
+Once the account is created the user will be able to log in with the account they created.
+![login](./images/Login.png)
+
+After logging in they will be taken to their profile where they can keep track of their past logs and progress with the chart displayed.
+![profile](./images/Profile.png)
+
+To create a new log the user will click the 'create log' option where they will be taken to the following page. They will need to answer the following prompts and hit save to.
+![createlog](./images/Create-Log.png)
 
 ### Links
 
